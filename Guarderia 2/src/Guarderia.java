@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 public class Guarderia {
 
         private String name;
@@ -13,13 +14,15 @@ public class Guarderia {
             listaNinos.remove(Antnino);
         }
 
-        public Nino validarNino(String identificacion) {
+        public String validarNino(String identificacion) {
             for (Nino n : listaNinos) {
                 if (n.getIdentificacion().equals(identificacion)) {
-                    return n;
+                    Random rand = new Random();
+                    int randomIdentifitation = rand.nextInt(1000);
+                    return String.valueOf(randomIdentifitation);
                 }
             }
-            return null;
+            return identificacion;
         }
 
         public void actualizarNino(String nombre, int edad, String genero, String identificacion, String alergias, String nombreAcudiente, String contactoAcudiente) {

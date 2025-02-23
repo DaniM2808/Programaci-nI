@@ -16,7 +16,10 @@ import java.util.ArrayList;
                 String nombreAcudiente = JOptionPane.showInputDialog("Nombre del acudiente:");
                 String contactoAcudiente = JOptionPane.showInputDialog("Numero del acudiente:");
 
-                Nino nino = new Nino(nombre, edad, genero, identificacion, alergias, nombreAcudiente, contactoAcudiente);
+                String valid = String.valueOf(guarderia.validarNino(identificacion));
+
+                Nino nino = new Nino(nombre, edad, genero, valid, alergias, nombreAcudiente, contactoAcudiente);
+
                 guarderia.agregarNino(nino);
             }
 
